@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import { useEffect } from 'react';
 
-function App() {
+export default function App() {
+  useEffect( () => {
+    fetch('/pokemon').then((res) => {
+    return res.json()
+    }).then(json => console.log(json))
+  })
   return (
     <div className="App">
-      test
+      test hello im a teapot
     </div>
-  );
-}
-
-export default App;
+  )};
